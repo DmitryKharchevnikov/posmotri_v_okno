@@ -11,11 +11,16 @@ html {
 .page {
   inline-size: 1200px;
   block-size: 100%;
-  margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -35,4 +40,290 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  min-height: 534px;
+  min-width: 1140px;
+  gap: 30px;
+  margin: 133px 30px;
+}
+
+.result {
+  width: 711px;
+  height: 456px;
+  margin-top: 78px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result__video-container {
+  min-width: 711px;
+  min-height: 386px;
+  position: relative;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-form__fieldset {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: fit-content;
+  position: relative;
+  border: none;
+}
+
+.search-form__fieldset:active {
+  border: none;
+  outline: none;
+}
+
+.search-form__fieldset-title {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  appearance: none;
+  width: fit-content;
+
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label:hover {
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  min-width: 225px;
+  background-color: transparent;
+  display: flex;
+  inline-size: 225px;
+  align-items: center;
+  border: none;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  font-family: inherit;
+  color: inherit;
+}
+
+.search-form__textfield:active {
+  outline: none;
+  border-right: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+}
+
+.search-form__textfield:focus {
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: none;
+}
+
+.search-form__label-text {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.search-form__checkbox:checked + span {
+  outline: 1px solid black;
+  background-color: #FFF;
+  outline-offset: -2px;
+}
+
+.search-form__checkbox + span {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #FFF;
+}
+
+.content__details {
+  width: 534px;
+  display: flex;
+  gap: 26px;
+  flex-direction: column;
+}
+
+.title {
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  display: flex;
+  max-height: 298px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+  overflow: scroll;
+  position: relative;
+}
+
+.content__list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.content__card-link_current {
+  display: flex;
+  width: 394px;
+  padding: 2px;
+  align-items: flex-start;
+  background: #545050;
+}
+
+.content__card-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  border: 1px solid #FFF;
+}
+
+.content__video-card {
+  width: 398px;
+  height: 106px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  overflow: hidden;
+}
+
+.content__video-card-title {
+  font-family: "Oswald";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 30px */
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.2px; /* 90% */
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* тут всё про кнопки */
+
+.button {
+  color: #FFF;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #FFF;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.button:active {
+  background: #545050;
+}
+
+.button:focus {
+  border: 3px double #FFF;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  margin-top: 20px;
+}
+
+.more-button {
+  width: 399px;
+  height: 34px;
 }
