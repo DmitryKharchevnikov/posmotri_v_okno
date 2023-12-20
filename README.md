@@ -1,1 +1,1 @@
-https://github.com/DmitryKharchevnikov/posmotri_v_okno.git
+https://github.com/DmitryKharchevnikov/posmotri_v_okno
