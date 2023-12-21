@@ -19,7 +19,7 @@ html {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
@@ -56,8 +56,8 @@ ol {
   display: flex;
   flex-direction: row;
   align-content: flex-end;
-  min-height: 534px;
-  min-width: 1140px;
+  height: 534px;
+  width: 1140px;
   gap: 30px;
   margin: 133px 30px;
 }
@@ -96,17 +96,11 @@ ol {
   align-items: flex-start;
   gap: 5px;
   width: fit-content;
-  position: relative;
   border: none;
-}
-
-.search-form__fieldset:active {
-  border: none;
-  outline: none;
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -130,21 +124,21 @@ ol {
 }
 
 .search-form__textfield {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  min-width: 225px;
   background-color: transparent;
   display: flex;
-  inline-size: 225px;
+  min-inline-size: 225px;
   align-items: center;
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   font-family: inherit;
   color: inherit;
+  appearance: none;
 }
 
 .search-form__textfield:active {
@@ -154,16 +148,16 @@ ol {
 }
 
 .search-form__textfield:focus {
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-}
-
-.search-form__label:has(.search-form__textfield:focus-visible) {
   outline: none;
 }
 
+.search-form__label:has(:focus-visible) {
+  outline-offset: 1px;
+  outline: 1px solid #fff;
+}
+
 .search-form__label-text {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -173,7 +167,6 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   gap: 15px;
 }
 
@@ -190,7 +183,7 @@ ol {
 }
 
 .content__details {
-  width: 534px;
+  width: 399px;
   display: flex;
   gap: 26px;
   flex-direction: column;
@@ -198,7 +191,7 @@ ol {
 
 .title {
   color: #fff;
-  font-family: Oswald;
+  font-family: "Oswald", serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -215,7 +208,6 @@ ol {
   max-height: 298px;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 30px;
   overflow: scroll;
   position: relative;
 }
@@ -226,17 +218,20 @@ ol {
   justify-content: space-between;
 }
 
-.content__card-link {
-  display: block;
-  text-decoration: none;
-  color: #fff;
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
-.content__card-link_current {
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
   display: flex;
   width: 394px;
   padding: 2px;
   align-items: flex-start;
+}
+
+.content__card-link_current {
   background: #545050;
 }
 
@@ -247,21 +242,26 @@ ol {
 
 .content__card-link:focus {
   border: 1px solid #fff;
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__video-card {
   width: 398px;
-  height: 106px;
+  min-height: 106px;
   display: flex;
   justify-content: space-between;
 }
 
-.content__video-card-description-container {
-  overflow: hidden;
-}
-
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -269,11 +269,13 @@ ol {
   text-transform: uppercase;
   margin-bottom: 6px;
   overflow: hidden;
+  max-width: 197px;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -291,7 +293,7 @@ ol {
 
 .button {
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -313,7 +315,13 @@ ol {
 }
 
 .button:focus {
-  border: 3px double #fff;
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: -3px;
 }
 
 .search-form__submit-button {
